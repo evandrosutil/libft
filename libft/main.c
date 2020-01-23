@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:18:12 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/21 20:59:02 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/23 21:03:53 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ int	main(int argc, char **argv)
     printf("caractere: %c => ft_isalnum: %d // isalnum: %d\n", 122,  ft_isalnum(122), isalnum(122));
     printf("caractere: %c => ft_isascii: %d // isascii: %d\n", 128, ft_isascii(128), isascii(128));
     printf("string: %s => ft_strlen: %lu // strlen: %lu\n", "pizza",  ft_strlen("pizza"), strlen("pizza"));
-    printf("string: %s => ft_strncmp: %d // strncmp: %d\n", "lala", ft_strncmp("tudo", "tudo", 2), strncmp("tudo", "tudo", 2));
-    printf("string: %s => ft_strnstr: %s // strnstr: %s\n", "eu quero pastel => quero pastel", ft_strnstr("eu quero pastel", "quero", 7), strnstr("eu quero pastel", "quero", 7));
+	printf("string: %s => ft_strncmp: %d // strncmp: %d\n", "lala", ft_strncmp("tudo", "tudo", 2), strncmp("tudo", "tudo", 2));
     printf("caractere: %c => ft_tolower: %c // tolower: %c\n", 'C', ft_tolower('C'), tolower('C'));
     printf("caractere: %c => ft_toupper: %c // toupper: %c\n", 'c', ft_toupper('c'), toupper('c'));
     printf("ft_isprint: %d // isprint: %d\n", ft_isprint(33), isprint(33));
