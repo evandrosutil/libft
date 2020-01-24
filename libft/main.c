@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:18:12 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/23 21:03:53 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/23 22:01:14 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include <string.h>
-
-int         ft_atoi(const char *str);
-int         ft_isalnum(int c);
-int         ft_isalpha(int c);
-int         ft_isascii(int c);
-int         ft_isdigit(int c);
-int			ft_isprint(int c);
-long int	ft_strlen(const char *str);
-int         ft_strncmp(const char *s1, const char *s2, size_t n);
-int			ft_tolower(int c);
-int			ft_toupper(int c);
+#include "libft.h"
 
 int	main(int argc, char **argv)
 {
     (void)argc;
+	printf("espero: 'stel' => ft_strrchr: %s // strrchr: %s\n", ft_strrchr("pastel", 115), strrchr("pastel", 115));
+	printf("espero: 'quero pastel' => ft_strnstr: %s // strnstr: %s\n", ft_strnstr("sabado eu quero pastel", "quero", 15), strnstr("sabado eu quero pastel", "quero", 15));
     if (argv[1])
         printf("entrada: %s => ft_atoi: %d // atoi: %d\n", argv[1], ft_atoi(argv[1]), atoi(argv[1]));
     printf("letra: %c => ft_isalpha: %d // isalpha: %d\n", '2', ft_isalpha('2'), isalpha('2'));
