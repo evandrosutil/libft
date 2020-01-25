@@ -6,26 +6,26 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 21:57:58 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/23 22:00:37 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/25 16:05:38 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int ret;
 	int i;
 
-	i = 0; 
-	ret = 0;
-	while (s[i] != 0)
+	i = 0;
+	ret = -1;
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			ret = i;
 		i++;
 	}
-	if (c == 0)
+	if (c == '\0')
 		return ((char *)&s[i]);
-	else if (ret != 0)
+	else if (ret != -1)
 		return ((char *)&s[ret]);
 	return (0);
 }

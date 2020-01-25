@@ -6,22 +6,26 @@
 #    By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/21 20:27:55 by ede-nada          #+#    #+#              #
-#    Updated: 2020/01/21 20:30:39 by ede-nada         ###   ########.fr        #
+#    Updated: 2020/01/25 15:39:55 by ede-nada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = TESTE
 
-SRC = *.c
+SRC = ft_*.c
 
 FLGS = -Wall -Werror -Wextra
 
-HEADERS = libft.h
+LIBS = ft_*.o
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(FLGS) $(SRC) -o $(NAME) -I$(HEADERS)
+lib:
+	gcc -c $(SRC)
+	ar rcs libft.a $(LIBS)
+
+$(NAME): lib
+	gcc $(FLGS) main.c -o $(NAME) -L. -lft libft.a
 
 clean:
 	/bin/rm -f *.o

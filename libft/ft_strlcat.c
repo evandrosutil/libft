@@ -6,16 +6,16 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 14:15:43 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/25 14:17:20 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/25 14:48:42 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned long int	ft_strlcat(char *dest, char *src, unsigned long int size)
 {
-	unsigned int	j;
-	unsigned int	i;
+	unsigned long int	j;
+	unsigned long int	i;
 
 	i = 0;
 	if (size == 0)
