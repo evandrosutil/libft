@@ -22,3 +22,5 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 char		*ft_strnstr(char const *str, const char *to_find, unsigned long int len); 
 char		*ft_strrchr(const char *s, int c);
+char		*ft_strchr(const char *s, int c);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)

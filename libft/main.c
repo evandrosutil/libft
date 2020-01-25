@@ -20,8 +20,10 @@
 int	main(int argc, char **argv)
 {
     (void)argc;
-	printf("espero: 'stel' => ft_strrchr: %s // strrchr: %s\n", ft_strrchr("pastel", 115), strrchr("pastel", 115));
-	printf("espero: 'quero pastel' => ft_strnstr: %s // strnstr: %s\n", ft_strnstr("sabado eu quero pastel", "quero", 15), strnstr("sabado eu quero pastel", "quero", 15));
+    printf(
+    printf("espero: 'teste' => ft_strchr: %s // strchr: %s\n", ft_strchr("teste", 116), strchr("teste", 116));
+    printf("espero: 'te' => ft_strrchr: %s // strrchr: %s\n", ft_strrchr("teste", 116), strrchr("teste", 116));
+    printf("espero: 'quero pastel' => ft_strnstr: %s // strnstr: %s\n", ft_strnstr("sabado eu quero pastel", "quero", 15), strnstr("sabado eu quero pastel", "quero", 15));
     if (argv[1])
         printf("entrada: %s => ft_atoi: %d // atoi: %d\n", argv[1], ft_atoi(argv[1]), atoi(argv[1]));
     printf("letra: %c => ft_isalpha: %d // isalpha: %d\n", '2', ft_isalpha('2'), isalpha('2'));
