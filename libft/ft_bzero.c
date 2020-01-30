@@ -1,23 +1,23 @@
-#include <strings.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/29 20:39:15 by ede-nada          #+#    #+#             */
+/*   Updated: 2020/01/29 21:16:24 by ede-nada         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_bzero(void *s, unsigned long int n)
+void	ft_bzero(void *s, unsigned long int n)
 {
 	unsigned long int i;
 
-	while(i < n && *((unsigned char *)s + i) != '\0')
+	i = 0;
+	while (i < n)
 	{
-		*((unsigned char *)s + i) = (unsigned char)'\0';
+		*((unsigned char *)s + i) = 0;
 		i++;
-	}	
-}
-
-int main()
-{
-	unsigned char str1[40]="pipopopopo";
-	unsigned char str2[40]="pipopopopo";
-	bzero(str1, 1);
-	ft_bzero(str2, 1);
-	printf("%s\n", str1);
-	printf("%s\n", str2);
+	}
 }

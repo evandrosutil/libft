@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:31:41 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/25 15:55:40 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/29 21:11:44 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,9 @@ char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 unsigned long int	ft_strlcat(char *dest, char *src, unsigned long int size);
 unsigned long int	ft_strlcpy(char *dest, char *src, unsigned long int size);
+void				*ft_memcpy(void *dst,
+								const void *src,
+								unsigned long int n);
+void				*ft_memset(void *s, int c, unsigned long int n);
+void				ft_bzero(void *s, unsigned long int n);
 #endif
