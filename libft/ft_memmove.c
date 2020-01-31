@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 20:42:19 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 19:00:20 by ede-nada         ###   ########.fr       */
+/*   Created: 2020/01/31 19:29:28 by ede-nada          #+#    #+#             */
+/*   Updated: 2020/01/31 20:28:59 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, unsigned long int n)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, unsigned long int len)
 {
 	unsigned long int i;
 
 	if (!dst && !src)
 		return (0);
 	i = 0;
-	while (i < n)
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else
 	{
-		*((unsigned char *)dst + i) = *((unsigned char *)src + i);
-		i++;
+		while (len--)
+		{
+			*((unsigned char *)dst + len) = *((unsigned char *)src + len);
+		}
 	}
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:31:41 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/29 21:11:44 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/01/31 20:35:02 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void				*ft_memcpy(void *dst,
 								unsigned long int n);
 void				*ft_memset(void *s, int c, unsigned long int n);
 void				ft_bzero(void *s, unsigned long int n);
+void				*ft_memccpy(void *dst, const void *src, int c, unsigned long int n);
+void				*ft_memmove(void *dst, const void *src, unsigned long int len);
+void				*ft_memchr(const void *s, int c, unsigned long int n);
+void				*ft_memcmp(void *s1, const void *s2, unsigned long int n);
 #endif
