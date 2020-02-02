@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 20:32:48 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 20:36:02 by ede-nada         ###   ########.fr       */
+/*   Created: 2020/02/01 20:46:40 by ede-nada          #+#    #+#             */
+/*   Updated: 2020/02/02 17:00:51 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned long int n)
+void	*ft_calloc(unsigned long int count, unsigned long int size)
 {
-    unsigned long int i;
+    void		**a;
+    unsigned long int	c;
 
-    i = 0;
-    if (!s1 && !s2)
+    c = 0;
+    a = malloc(count * size);
+    if (!a)
 	return (0);
-    while (i < n)
+    while (c <= count)
     {
-	if (*((unsigned char *)s1 + i) != *((unsigned char *)s2 + i))
-	     return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
-	i++;
+	*(a + c) = 0;
+	c++;
     }
-    return (0);
+    return (a);
 }

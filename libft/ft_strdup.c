@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 20:32:48 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 20:36:02 by ede-nada         ###   ########.fr       */
+/*   Created: 2020/02/02 18:43:28 by ede-nada          #+#    #+#             */
+/*   Updated: 2020/02/02 19:11:45 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned long int n)
+#include <stdlib.h>
+
+char	*ft_strdup(const char *s1)
 {
-    unsigned long int i;
+    int i;
+    int j;
+    char *s2;
 
     i = 0;
-    if (!s1 && !s2)
-	return (0);
-    while (i < n)
-    {
-	if (*((unsigned char *)s1 + i) != *((unsigned char *)s2 + i))
-	     return (*((unsigned char *)s1 + i) - *((unsigned char *)s2 + i));
+    j = 0;
+    while (s1[i] != 0)
 	i++;
+    s2 = (char *)malloc((i + 1) * sizeof(char));
+    if (!s2)
+	return (0);
+    while (j < i)
+    {
+	*(s2 + j) = *((char *)s1 + j);
+	j++;
     }
-    return (0);
+    s2[j] = 0;
+    return ((char *)s2);
 }
