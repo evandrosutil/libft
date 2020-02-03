@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:31:41 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/02 18:47:50 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/03 19:33:36 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int					ft_strncmp(const char *s1,
 								unsigned long int n);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+char				*ft_itoa(int nb);
 char				*ft_strnstr(char const *str,
 								const char *to_find,
 								unsigned long int len);
