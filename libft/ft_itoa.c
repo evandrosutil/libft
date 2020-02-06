@@ -6,10 +6,11 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 19:27:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/03 20:23:18 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/05 19:28:43 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -18,6 +19,8 @@ static int		ft_intlen(int nb)
 	int len;
 
 	len = 0;
+	if (nb == -2147483648)
+		nb = (nb + 1) * -1;
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -31,14 +34,14 @@ static int		ft_intlen(int nb)
 	return (len);
 }
 
-char			*ft_itoa(int nb)
+char				*ft_itoa(int nb)
 {
 	char				*str;
 	unsigned int		nbr;
-	unsigned int		i;
+	int					i;
 
 	i = ft_intlen(nb);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(str = (char *)malloc(sizeof(char) * (i + 2))))
 		return (0);
 	str[i--] = 0;
 	if (nb == 0)
@@ -60,9 +63,4 @@ char			*ft_itoa(int nb)
 		i--;
 	}
 	return (str);
-}
-
-int main()
-{
-	printf("%s\n", ft_itoa(-2147483647));
 }
