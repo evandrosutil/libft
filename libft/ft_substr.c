@@ -6,10 +6,11 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 19:29:49 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/05 20:10:30 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/06 19:27:07 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, unsigned long int len)

@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:31:41 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/03 19:33:36 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/06 20:06:42 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void				*ft_memchr(const void *s, int c, unsigned long int n);
 void				*ft_memcmp(void *s1, const void *s2, unsigned long int n);
 void				*ft_calloc(unsigned long int count, unsigned long int size);
 char				*ft_strdup(const char *s1);
+char				*ft_strtrim(char const *s1, char const *set);
 #endif
