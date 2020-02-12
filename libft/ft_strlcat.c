@@ -6,33 +6,33 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 14:15:43 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/25 14:48:42 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 22:47:56 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long int	ft_strlcat(char *dest, char *src, unsigned long int size)
+size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
-	unsigned long int	j;
-	unsigned long int	i;
+	size_t	j;
+	size_t	i;
 
 	i = 0;
-	if (size == 0)
+	if (dstsize == 0)
 		return (ft_strlen(src));
-	else if (size <= ft_strlen(dest))
-		return (size + ft_strlen(src));
-	while (dest[i] != '\0')
+	else if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	while (dst[i] != '\0')
 	{
 		i++;
 	}
 	j = 0;
-	while (src[j] != '\0' && i < (size - 1))
+	while (src[j] != '\0' && i < (dstsize - 1))
 	{
-		dest[i] = src[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src) + ft_strlen(dest) - j);
+	dst[i] = '\0';
+	return (ft_strlen(src) + ft_strlen(dst) - j);
 }

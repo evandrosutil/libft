@@ -6,13 +6,15 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 20:42:19 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 19:00:20 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:00:29 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, unsigned long int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned long int i;
+	size_t i;
 
 	if (!dst && !src)
 		return (0);

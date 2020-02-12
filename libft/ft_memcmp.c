@@ -6,13 +6,15 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 20:32:48 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/03 19:25:14 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:04:58 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned long int n)
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned long int i;
+	size_t i;
 
 	i = 0;
 	if (!s1 && !s2)

@@ -6,13 +6,15 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 20:39:15 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/29 21:16:24 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:01:22 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned long int i;
+	size_t i;
 
 	i = 0;
 	while (i < n)

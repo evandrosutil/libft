@@ -6,14 +6,16 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 14:24:10 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 18:55:59 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 22:45:00 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long int	ft_strlcpy(char *dest, char *src, unsigned long int size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
-	unsigned long int	i;
-	unsigned long int	j;
+	size_t	i;
+	size_t	j;
 
 	if (!src)
 		return (0);
@@ -23,14 +25,14 @@ unsigned long int	ft_strlcpy(char *dest, char *src, unsigned long int size)
 		i++;
 	}
 	j = 0;
-	while (size != 0 && j < (size - 1) && src[j])
+	while (dstsize != 0 && j < (dstsize - 1) && src[j])
 	{
-		dest[j] = src[j];
+		dst[j] = src[j];
 		j++;
 	}
-	if (j < size)
+	if (j < dstsize)
 	{
-		dest[j] = '\0';
+		dst[j] = '\0';
 	}
 	return (i);
 }

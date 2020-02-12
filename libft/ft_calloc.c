@@ -6,16 +6,16 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 20:46:40 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/03 19:22:10 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:05:46 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(unsigned long int count, unsigned long int size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void				**a;
-	unsigned long int	c;
+	void	**a;
+	size_t	c;
 
 	c = 0;
 	a = malloc(count * size);

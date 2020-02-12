@@ -6,14 +6,16 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 20:30:58 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/03 19:23:14 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:04:05 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(const void *s, int c, unsigned long int n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned long int	i;
-	unsigned char		c2;
+	size_t		i;
+	unsigned char	c2;
 
 	i = 0;
 	c2 = (unsigned char)c;

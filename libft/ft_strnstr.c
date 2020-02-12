@@ -6,25 +6,27 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 21:12:47 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/25 16:11:34 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 23:22:05 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(char *str, char *to_find, unsigned long int len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned long int	i;
-	unsigned long int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != 0 && i < len)
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != 0 && i < len)
 	{
 		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && i + j < len)
+		while (haystack[i + j] != '\0' && haystack[i + j] == needle[j] && i + j < len)
 		{
-			if (to_find[j + 1] == '\0')
-				return (&str[i]);
+			if (needle[j + 1] == '\0')
+				return ((char *)&haystack[i]);
 			j++;
 		}
 		i++;

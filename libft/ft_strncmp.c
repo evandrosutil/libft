@@ -6,15 +6,17 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 20:57:20 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/29 21:02:06 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 22:53:31 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned long int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long int	i;
-	unsigned char		*ss1;
-	unsigned char		*ss2;
+	size_t		i;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
 
 	i = 0;
 	ss1 = (unsigned char *)s1;

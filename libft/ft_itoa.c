@@ -6,13 +6,11 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 19:27:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/05 19:28:43 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/11 22:22:11 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static int		ft_intlen(int nb)
 {
