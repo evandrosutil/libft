@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 20:57:20 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/12 19:52:31 by ede-nada         ###   ########.fr       */
+/*   Created: 2020/02/12 19:53:54 by ede-nada          #+#    #+#             */
+/*   Updated: 2020/02/12 20:03:51 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*ss1;
-	unsigned char	*ss2;
-
-	i = 0;
-	ss1 = (unsigned char *)s1;
-	ss2 = (unsigned char *)s2;
-	while ((ss1[i] != 0 || ss2[i] != 0) && i < n)
-	{
-		if (ss1[i] != ss2[i])
-			return (ss1[i] - ss2[i]);
-		i++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }

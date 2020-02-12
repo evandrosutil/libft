@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 19:27:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/11 22:22:11 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/02/12 19:51:54 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int		ft_intlen(int nb)
 	return (len);
 }
 
-char				*ft_itoa(int nb)
+char			*ft_itoa(int nb)
 {
 	char				*str;
 	unsigned int		nbr;
@@ -56,7 +56,7 @@ char				*ft_itoa(int nb)
 		nbr = nb;
 	while (nbr > 0)
 	{
-		str[i] = (nbr % 10) + 48; 
+		str[i] = (nbr % 10) + 48;
 		nbr /= 10;
 		i--;
 	}
