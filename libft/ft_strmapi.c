@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 20:24:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/12 20:40:42 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:11:08 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,25 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str;
+	unsigned int		i;
+	char				*str;
 
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s))))
+	if (!str)
 		return (0);
-	while ((char)s[i] != 0)
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (0);
+	ft_bzero(str, ft_strlen(s) + 1);
+	while (s[i] != 0)
 	{
-		str[i] = f(i, (char)s[i]);
+		str[i] = s[i];
 		++i;
 	}
-	return ((char *)s);
+	i = 0;
+	while (str[i] != 0)
+	{
+		str[i] = (*f)(i, str[i]);
+		++i;
+	}
+	return (str);
 }

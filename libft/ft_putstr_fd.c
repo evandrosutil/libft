@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 20:04:55 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/12 20:08:03 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/13 18:32:20 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i] != '\0' && fd != 0)
 	{
 		ft_putchar_fd(s[i], fd);
 		++i;
