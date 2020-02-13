@@ -6,25 +6,18 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 20:46:40 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/11 23:05:46 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/02/13 19:17:08 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	**a;
-	size_t	c;
+	void	*a;
 
-	c = 0;
-	a = malloc(count * size);
-	if (!a)
+	if (!(a =  (void *)malloc(count * size)))
 		return (0);
-	while (c <= count)
-	{
-		*(a + c) = 0;
-		c++;
-	}
+	ft_bzero(a, count * size);
 	return (a);
 }
