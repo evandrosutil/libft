@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/23 20:09:33 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/01/31 19:17:56 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:23:03 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int	ft_atoi(const char *str)
 		ret = (ret * 10) + (str[i] - 48);
 		i++;
 	}
-	ret *= neg;
-	return (ret);
+	return (ret * neg);
 }

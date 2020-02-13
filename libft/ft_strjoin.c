@@ -6,14 +6,13 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 20:11:00 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/05 20:21:38 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:47:51 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1,	char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char				*str;
 	unsigned long int	i;

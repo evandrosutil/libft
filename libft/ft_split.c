@@ -6,14 +6,26 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 19:46:04 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/12 19:49:39 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:52:07 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int	ft_count_word(const char *s, size_t i, char c) 
+{
+	int count;
+
+	count = 0;
+	while (s[i] != c && s[i] != 0)
+	{
+		++count;
+		++i;
+	}
+	return (count);
+}
+
+char		**ft_split(char const *s, char c)
 {
 	char		**array;
 	size_t		i;
@@ -42,12 +54,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] == c || (s[i] >= 9 && s[i] <= 13) || s[i] == 32)
 			i++;
-		w_size = 0;
-		while (s[i] != c && s[i] != 0)
-		{
-			w_size++;
-			i++;
-		}
+		w_size = ft_count_word(s, i, c);
 		array[array_i] = (char *)malloc(sizeof(char) * (w_size + 1));
 		j = 0;
 		i -= w_size;
