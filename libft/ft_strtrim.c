@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 19:29:07 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/06 21:02:08 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/14 19:48:08 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,24 @@ static int	ft_check_occor(char const *s1, char const *set, int dir)
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	char		*str;
 	int		i;
 	int		b_occor;
 	int		e_occor;
+	int		len;
 
 	i = 0;
 	if (!s1)
 		return (0);
+	len = ft_strlen(s1);
 	b_occor = ft_check_occor(s1, set, 0);
-	if (b_occor != ft_strlen(s1))
+	if (b_occor != len)
 			e_occor = ft_check_occor(s1, set, 1);
-	i = ft_strlen(s1) - (e_occor + b_occor);
+	i = len - (e_occor + b_occor);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
 	i = 0;
-	while (i < ft_strlen(s1) - (b_occor + e_occor))
+	while (i < (len - (b_occor + e_occor)))
 	{
 		str[i] = s1[i + b_occor];
 		i++;
@@ -73,3 +75,4 @@ char		*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
+
