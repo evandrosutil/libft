@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
-int		ft_check_str_in(char c, char const *set)
+int			ft_check_str_in(char c, char const *set)
 {
 	int		i;
 
@@ -28,7 +27,28 @@ int		ft_check_str_in(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	ft_check_occor(char const *s1, char const *set, int dir)
+{
+	int res;
+	int	i;
+
+	res = 0;
+	i = 0;
+	if (dir == 1)
+		i = ft_strlen(s1) - 1;
+	while (ft_check_str_in(s1[i], set))
+	{
+		res++;
+		if (dir == 1)
+			i--;
+		else
+			i++;
+	}
+	return (res);
+}
+
+
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		i;
@@ -36,24 +56,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		e_occor;
 
 	i = 0;
-	b_occor = 0;
-	e_occor = 0;
 	if (!s1)
 		return (0);
-	while (ft_check_str_in(s1[i], set))
-	{
-		b_occor++;
-		i++;
-	}
+	b_occor = ft_check_occor(s1, set, 0);
 	if (b_occor != ft_strlen(s1))
-	{
-		i = ft_strlen(s1);
-		while (ft_check_str_in(s1[i - 1], set))
-		{
-			e_occor++;
-			i--;
-		}
-	}
+			e_occor = ft_check_occor(s1, set, 1);
 	i = ft_strlen(s1) - (e_occor + b_occor);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
