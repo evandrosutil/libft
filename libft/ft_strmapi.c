@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 20:24:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/13 19:11:08 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/17 19:03:17 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int		i;
 	char				*str;
 
-	if (!str)
-		return (0);
 	i = 0;
 	if (!(str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (0);
