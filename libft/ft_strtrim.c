@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 19:29:07 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/14 19:48:08 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/02/17 19:01:17 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,22 @@ static int	ft_check_occor(char const *s1, char const *set, int dir)
 	return (res);
 }
 
-
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char		*str;
+	char	*str;
 	int		i;
 	int		b_occor;
 	int		e_occor;
 	int		len;
 
 	i = 0;
+	e_occor = 0;
 	if (!s1)
 		return (0);
 	len = ft_strlen(s1);
 	b_occor = ft_check_occor(s1, set, 0);
 	if (b_occor != len)
-			e_occor = ft_check_occor(s1, set, 1);
+		e_occor = ft_check_occor(s1, set, 1);
 	i = len - (e_occor + b_occor);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
@@ -75,4 +75,3 @@ char		*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-
