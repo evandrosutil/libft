@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 19:27:39 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/13 19:42:02 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/02/17 20:18:08 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ static int		ft_intlen(int nb)
 	int len;
 
 	len = 0;
+	if (nb == 0)
+		return (1);
 	if (nb == -2147483648)
-		nb = (nb + 1) * -1;
+		nb++;
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -39,12 +41,12 @@ char			*ft_itoa(int nb)
 	int					i;
 
 	i = ft_intlen(nb);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 2))))
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
 	str[i--] = '\0';
-	ft_bzero(str, ft_intlen(nb + 1));
-	if (!nb)
-		return ("0");
+	ft_bzero(str, ft_intlen(nb));
+	if (nb == 0)
+		str[0] = '0';
 	if (nb < 0)
 	{
 		str[0] = '-';
