@@ -6,28 +6,33 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 19:46:04 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/13 22:37:32 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/02/25 12:15:45 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static int		ft_count_words(const char *s, char c)
 {
-	int seps;
 	int i;
+	int word;
+	int total;
 
 	i = 0;
-	seps = 0;	
-	while (s[i] != 0)
+	word = 0;
+	total = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c && (s[i + 1] != c && s[i + 1] != 0) && s[i] != 0)
-			seps++;
+		if (s[i] != c && word == 0)
+		{
+			word = 1;
+			total++;
+		}
+		else if (s[i] == c)
+			word = 0;
 		i++;
 	}
-	if (s[0] == c)
-		seps -= 1;
-	return (seps);
+	return (total);
 }
 
 static int	ft_word_size(char const *s, char c, int i)
@@ -69,14 +74,13 @@ char	**ft_split(char const *s, char c)
 	int			w_size;
 
 	i = 0;
-	seps = 0;
 	if (!s)
 		return (0);
 	seps = ft_count_words(s, c);
-	if (!(array = (char **)malloc(sizeof(char *) * (seps + 2))))
+	if (!(array = (char **)malloc(sizeof(char *) * (seps + 1))))
 		return (0);
 	array_i = 0;
-	while (array_i <= seps)
+	while (array_i < seps)
 	{
 		while (s[i] == c || (s[i] >= 9 && s[i] <= 13) || s[i] == 32)
 			i++;
@@ -87,17 +91,4 @@ char	**ft_split(char const *s, char c)
 	}
 	array[array_i] = 0;
 	return (array);
-}
-
-int main()
-{
-	char **array;
-	int i=0;
-
-	array = ft_split("lorem ipsum remet Turvald", 32);
-	while (array[i] != 0)
-	{
-		printf("%d: %s\n", i, array[i]);
-		i++;
-	}
 }
