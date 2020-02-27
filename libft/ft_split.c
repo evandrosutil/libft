@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 19:46:04 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/25 12:15:45 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/02/27 19:16:13 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,37 @@ static int		ft_count_words(const char *s, char c)
 	return (total);
 }
 
-static int	ft_word_size(char const *s, char c, int i)
+static int		ft_word_size(char const *s, char c, int i)
 {
 	int w_size;
 
 	w_size = 0;
 	while (s[i] != c && s[i] != 0)
 	{
-			w_size++;
-			i++;
+		w_size++;
+		i++;
 	}
-	return w_size;
+	return (w_size);
 }
 
-static char	*ft_splited(char const *s, int w_size, int i)
+static char		*ft_splited(char const *s, int w_size, int i)
 {
-		char *word;
-		int j;
+	char	*word;
+	int		j;
 
-		j = 0;
-		word = (char *)malloc(sizeof(char) * (w_size + 1));
-		while (j < w_size)
-		{
-			word[j] = s[i];
-			i++;
-			j++;
-		}
-		word[j] = 0;
-		return (word);
+	j = 0;
+	word = (char *)malloc(sizeof(char) * (w_size + 1));
+	while (j < w_size)
+	{
+		word[j] = s[i];
+		i++;
+		j++;
+	}
+	word[j] = 0;
+	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char		**array;
 	size_t		i;
