@@ -6,15 +6,15 @@
 #    By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/21 20:27:55 by ede-nada          #+#    #+#              #
-#    Updated: 2020/02/29 11:53:57 by evandrosu        ###   ########.fr        #
+#    Updated: 2020/02/29 19:34:08 by ede-nada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = TEST
 
-SRC = ft_atoi.c \
+FILES = ft_atoi.c \
 	  ft_bzero.c \
-	  ft_callo.c \
+	  ft_calloc.c \
 	  ft_isalnum.c \
 	  ft_isalpha.c \
 	  ft_isascii.c \
@@ -33,6 +33,8 @@ SRC = ft_atoi.c \
 	  ft_putstr_fd.c \
 	  ft_split.c \
 	  ft_strchr.c \
+	  ft_substr.c \
+	  ft_strtrim.c \
 	  ft_strdup.c \
 	  ft_strjoin.c \
 	  ft_strlcat.c \
@@ -43,18 +45,25 @@ SRC = ft_atoi.c \
 	  ft_strnstr.c \
 	  ft_strrchr.c \
 	  ft_tolower.c \
-	  ft_toupper.c 
-
-INCLUDES = libft.h
+	  ft_toupper.c \
+	  ft_lstnew.c \
+	  ft_lstdelone.c \
+	  ft_lstclear.c \
+	  ft_lstadd_back.c \
+	  ft_lstadd_front.c \
+	  ft_lstsize.c \
+	  ft_lstiter.c \
+	  ft_lstmap.c \
+	  ft_lstlast.c
 
 FLGS = -Wall -Werror -Wextra
 
-LIBS = 
+LIBS = ft_*.o
 
 all: $(NAME)
 
 lib:
-	gcc -c $(SRC)
+	gcc -c $(FILES)
 	ar rcs libft.a $(LIBS)
 
 $(NAME): lib
@@ -63,7 +72,7 @@ $(NAME): lib
 clean:
 	/bin/rm -f *.o
 
-fclean:
+fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
