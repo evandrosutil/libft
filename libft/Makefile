@@ -6,11 +6,11 @@
 #    By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/21 20:27:55 by ede-nada          #+#    #+#              #
-#    Updated: 2020/02/29 19:34:08 by ede-nada         ###   ########.fr        #
+#    Updated: 2020/03/01 19:01:43 by evandrosu        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = TEST
+NAME = libft.a
 
 FILES = ft_atoi.c \
 	  ft_bzero.c \
@@ -45,8 +45,9 @@ FILES = ft_atoi.c \
 	  ft_strnstr.c \
 	  ft_strrchr.c \
 	  ft_tolower.c \
-	  ft_toupper.c \
-	  ft_lstnew.c \
+	  ft_toupper.c 
+
+FILES_BONUS = ft_lstnew.c \
 	  ft_lstdelone.c \
 	  ft_lstclear.c \
 	  ft_lstadd_back.c \
@@ -58,21 +59,27 @@ FILES = ft_atoi.c \
 
 FLGS = -Wall -Werror -Wextra
 
-LIBS = ft_*.o
+OBJCTS = $(FILES:.c=.o)
+
+OBJCTS_BONUS = $(FILES_BONUS:.c.o)
+
+INCLDS = libft.h
 
 all: $(NAME)
 
-lib:
-	gcc -c $(FILES)
-	ar rcs libft.a $(LIBS)
-
-$(NAME): lib
-	gcc $(FLGS) main.c -o $(NAME) -L. -lft libft.a
+$(NAME): $(OBJCTS)
+	ar rc $(NAME) $(OBJCTS)
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJCTS)
 
 fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJCTS) $(OBJCTS_BONUS)
+	ar rc $(NAME) $(OBJCTS) $(OBJCTS_BONUS)
+
+%.o: %.c
+	gcc -c $(FLGS) $< -I $(INCLDS) -o $@
