@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 20:31:41 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/29 16:42:16 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/03/05 18:47:28 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char			*ft_strnstr(const char *haystack,
 							size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strchr(const char *s, int c);
-size_t			ft_strlcat(char *dst, char *src, size_t dstsize);
-size_t			ft_strlcpy(char *dst, char *src, size_t dstsize);
-size_t			ft_strlen(const char *str);
+size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlen(const char *s);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
-void			*ft_memset(void *s, int c, size_t len);
+void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);

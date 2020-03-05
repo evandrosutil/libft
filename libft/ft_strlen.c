@@ -6,18 +6,18 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 19:32:13 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/11 22:25:34 by evandrosu        ###   ########.fr       */
+/*   Updated: 2020/03/05 18:40:29 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}
