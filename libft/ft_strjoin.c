@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 20:11:00 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/13 19:47:51 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/03/05 18:19:47 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned long int	i;
 	unsigned long int	j;
 
+	if (!s1)
+		return (0);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
 	if (!(str = (char *)malloc(sizeof(char) * (i + j + 1))))

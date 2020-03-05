@@ -6,7 +6,7 @@
 #    By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/21 20:27:55 by ede-nada          #+#    #+#              #
-#    Updated: 2020/03/01 19:01:43 by evandrosu        ###   ########.fr        #
+#    Updated: 2020/03/05 18:31:28 by ede-nada         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ FLGS = -Wall -Werror -Wextra
 
 OBJCTS = $(FILES:.c=.o)
 
-OBJCTS_BONUS = $(FILES_BONUS:.c.o)
+OBJCTS_BONUS = $(FILES_BONUS:.c.=o)
 
 INCLDS = libft.h
 
@@ -78,7 +78,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJCTS) $(OBJCTS_BONUS)
+bonus: $(OBJCTS_BONUS) $(OBJCTS) 
 	ar rc $(NAME) $(OBJCTS) $(OBJCTS_BONUS)
 
 %.o: %.c

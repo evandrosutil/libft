@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 19:29:49 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/17 19:45:49 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/03/05 18:20:14 by ede-nada         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			i;
 	size_t			l;
 
+	if (!s)
+		return (0);
 	i = 0;
 	l = ft_strlen(s);
 	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
