@@ -6,7 +6,7 @@
 /*   By: ede-nada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 16:46:57 by ede-nada          #+#    #+#             */
-/*   Updated: 2020/02/29 20:38:04 by ede-nada         ###   ########.fr       */
+/*   Updated: 2020/03/04 21:30:48 by evandrosu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),	void (*del)(void *))
 {
-	void * new_list;
+	t_list *new_lst;
 	
-	if (!(new_list = (t_list)malloc(sizeof(list))))
+	if (!lst)
 		return (NULL);
-	while (lst)
+	if ((new_lst = ft_lstnew(f(lst->content))) == NULL)
 	{
-		
+		ft_lstclear(&new_lst, del);
+		return (NULL);
+	}
+	new_lst->next = ft_lstmap(lst->next, f, del);
+	return (new_lst);
 	
 }
